@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="/wai/wai.js"></script>
+	<!-- Add a script below this line. -->
+	<title th:text="${titulo}"></title>
+</head>
+<body>
+
+<h1 th:text="${titulo}"></h1>
+
+<span th:text="${usuario.nombre}"></span>
+<span th:text="${usuario.apellido}"></span>
+<br>
+<span th:if="${usuario.email != null}" th:text="${usuario.email}"></span> <!--Atajo de para las lineas 17, 18-->
+<!--<span th:if="${usuario.email == null}" th:text="'El usuario no tiene correo con thymeLeaf en el text'"></span><br> 
+<span th:if="${usuario.email == null}">El usuario no tiene correo sin thymeLeaf en el text</span>-->
+</body>
+</html>
