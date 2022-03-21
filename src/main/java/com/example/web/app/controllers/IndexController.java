@@ -6,16 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 //import org.springframework.ui.ModelMap; //importe del metodo ModelMap
 import org.springframework.web.bind.annotation.GetMapping; //importe del metodo GetMapping
+import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMapping; //Importe del metodo RequestMapping
 //import org.springframework.web.servlet.ModelAndView; //importe del metodo ModelAndView
 //import org.springframework.web.bind.annotation.RequestMethod; //Importe del metodo1
 
 @Controller
+@RequestMapping("/app")
 public class IndexController {
 	
 	//@RequestMapping(value="/index", method=RequestMethod.GET) //metodo1
 	//@GetMapping(value="/index") // con value
-	@GetMapping({"/index", "/", "/home"}) //sin value
+	@GetMapping({"/index", "/", "", "/home"}) //sin value
 	public String index(Model model) { //metodo1 con Model
 	//public String index(ModelMap model) { //metodo2 con ModelMap
 	//public String index(Map<String, Object> map) { //metodo3 con Map
