@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="/wai/wai.js"></script>
+	<!-- Add a script below this line. -->
+	<title>Enviar parámetros del request HTTP GET - URL</title>
+</head>
+<body>
+<h1>Enviar parámetros del request HTTP GET - URL</h1>
+<ul>
+<li><a th:href="@{/params/string(texto='Hola Jorge')}">/params/string?texto=Hola Jorge</a></li>
+<li><a th:href="@{/params/string(texto='Que tal Juan!')}">/params/string?texto=Que tal Juan!</a></li>
+<li><a th:href="@{/params/mix-params(saludo='Buen día Carlos, como estás?', numero=7)}">/params/mix-params?saludo=Buen día Carlos, como estás? & numero=7</a></li>
+<li><a th:href="@{/params/mix-params-request(saludo='Buen día Carlos, como estás?', numero=7)}">/params/mix-params-request?saludo=Buen día Carlos, como estás? & numero=7</a></li>
+</ul>
+</body>
+</html>
