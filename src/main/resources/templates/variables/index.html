@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="/wai/wai.js"></script>
+	<!-- Add a script below this line. -->
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+	<h1 th:text="${titulo}"></h1>
+	<ul>
+		<li><a th:href="@{/variables/string/} + 'Hola Jorge'">/variables/string/Hola Jorge</a></li>
+		<li><a th:href="@{/variables/string/} + 'Como esta Sandra'">/variables/string/Como esta Sandra</a></li>
+		<li><a th:href="@{/variables/string/} + ${'Saludos Pamela'}+'/'+${'7'}">/variables/string/Hola Pamela/7</a></li>
+		
+	</ul>
+</body>
+
+</html>
