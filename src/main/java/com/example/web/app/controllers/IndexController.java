@@ -4,6 +4,8 @@ package com.example.web.app.controllers;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
+
 //import java.util.Map; //importe del metodo Map 
 
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,12 @@ import com.example.web.app.models.Usuario;
 @Controller
 @RequestMapping("/app")
 public class IndexController {
+	@Value("${texto.indexcontroller.index.titulo}")
+	private String textoIndex;
+	@Value("${texto.indexcontroller.perfil.titulo}")
+	private String textoPerfil;
+	@Value("${texto.indexcontroller.listar.titulo}")
+	private String textoListar;
 	
 	//@RequestMapping(value="/index", method=RequestMethod.GET) //metodo1
 	//@GetMapping(value="/index") // con value
@@ -29,7 +37,8 @@ public class IndexController {
 	//public String index(ModelMap model) { //metodo2 con ModelMap
 	//public String index(Map<String, Object> map) { //metodo3 con Map
 	//public ModelAndView index(ModelAndView mv) { //metodo4 
-		model.addAttribute("titulo", "Hola Spring Famework con model!"); //Cuerpo del metodo1y2
+		//model.addAttribute("titulo", "Hola Spring Famework con model!"); //Cuerpo del metodo1y2
+		model.addAttribute("titulo", textoIndex); // Inyección Value
 		model.addAttribute("subtitulo", "Comienza el verdadero cambio desde el controlador");
 		model.addAttribute("parrafo", "Estoy cambiando el proyecto a github desde el controlador");
 		//map.put("titulo", "Hola Spring Famework con Map!"); //cuerpo con el metodo3
@@ -47,7 +56,8 @@ public class IndexController {
 		usuario.setEmail("andres@correo.com");
 		
 		model.addAttribute("usuario", usuario);
-		model.addAttribute("titulo", "Perfil del usuario: ".concat(usuario.getNombre()));
+		//model.addAttribute("titulo", "Perfil del usuario: ".concat(usuario.getNombre()));
+		model.addAttribute("titulo", textoPerfil.concat(usuario.getNombre())); // Inyección con Value
 		
 		return "perfil";
 	}
@@ -65,7 +75,8 @@ public class IndexController {
 				new Usuario("Luisa", "Estupiñan", "luisa@correo.com"),
 				new Usuario("Carlos", "Restrepo", "carlos@correo.com"),
 				new Usuario("Sandra", "Lopez", "sandra@correo.com"));*/
-		model.addAttribute("titulo", "Listado de usuarios: ");
+		//model.addAttribute("titulo", "Listado de usuarios: ");
+		model.addAttribute("titulo", textoListar);  //Inyección con Value
 		//model.addAttribute("usuarios", usuarios);  //metodo con Arrays.asList
 		
 		return "listar";

@@ -2,13 +2,15 @@
 <html xmlns:th="http://www.thymeLeaf.org">
 <head>
 	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></link>
 	<script type="text/javascript" src="/wai/wai.js"></script>
 	<!-- Add a script below this line. -->
 	<title th:text="${titulo}"></title>
 </head>
 <body>
-<h1 th:text="${titulo}"></h1>
-<h2 th:text="${subtitulo}"></h2>
+<h1 class="color-rojo" th:text="${titulo}"></h1>
+<h2 class="color-azul" th:text="${subtitulo}"></h2>
+<img th:src="@{/images/tecnologia.jpeg}"></img>
 <p th:text="${parrafo}"></p>
 
 <!--Ejemplo Con el ModelAttribute para el index asi mismo para los metodos listar y perfil.-->
